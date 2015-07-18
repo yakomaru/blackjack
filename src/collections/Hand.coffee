@@ -8,12 +8,14 @@ class window.Hand extends Backbone.Collection
 
   stand: ->
     #if stand is called
-    debugger;
+    #flip first card
     @models[0].flip();
-      #flip first card
       #while dealer score <17
+    while @scores() < 17
         #flip cards from deck
+      @hit()
         #send score to view
+    @scores()  
 
   hasAce: -> @reduce (memo, card) ->
     memo or card.get('value') is 1
