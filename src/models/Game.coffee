@@ -4,7 +4,10 @@ class window.Game extends Backbone.Model
     @set 'playerHand', deck.dealPlayer()
     @set 'dealerHand', deck.dealDealer()
 
-
+  compareScores: ->
+    if @get('playerHand').score > @get('dealerHand').score
+      alert('You Win!')
+    else alert('You Lose!')
 #if player > 21 = bust
 #else if player = 21
 #when player stands, do dealer stuff
