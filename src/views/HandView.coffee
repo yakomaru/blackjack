@@ -5,7 +5,9 @@ class window.HandView extends Backbone.View
 
   initialize: ->
     @collection.on 'add remove change', => @render()
-    @collection.on 'add', => if @collection.scores() >21 then alert "bust" 
+    @collection.on 'add', => 
+      if @collection.score >21
+        @collection.bust = true;
     @render()
 
   render: ->
