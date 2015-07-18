@@ -10,12 +10,17 @@ class window.HandView extends Backbone.View
         @collection.bust = true;
     @render()
 
+  blackjack: ->
+    if @collection.score is 21 and !@collection.isDealer and @collection.models.length is 2
+      alert("BLACKJACK! \n You win!")
+  
   render: ->
     @$el.children().detach()
     @$el.html @template @collection
     @$el.append @collection.map (card) ->
       new CardView(model: card).$el
     @$('.score').text @collection.scores()
+    setTimeout((-> @blackjack()).bind(@), 0)
 
 
     #Aces

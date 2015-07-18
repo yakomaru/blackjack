@@ -42,9 +42,5 @@ class window.Hand extends Backbone.Collection
       @minScore() + 10 * @hasAce()
     else @minScore()
     @score
-###
-if (minscore<=21)
-  score = minscore+10*ace
-else
-  score = minscore
-###
+
+  

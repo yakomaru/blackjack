@@ -3,14 +3,14 @@ class window.Game extends Backbone.Model
     @set 'deck', deck = new Deck()
     @set 'playerHand', deck.dealPlayer()
     @set 'dealerHand', deck.dealDealer()
-    @get('playerHand').on 'change:bust', =>
-      alert('bust')
 
 
 
   compareScores: ->
     if @get('playerHand').score <= 21 and @get('playerHand').score > @get('dealerHand').score
       alert('You Win!')
+    else if @get('playerHand').score is @get('dealerHand').score
+      alert('Push!')
     else if @get('dealerHand').bust
       return
     else
