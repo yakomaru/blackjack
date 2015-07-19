@@ -15,12 +15,9 @@ class window.Game extends Backbone.Model
       return
     else
       alert('You Lose!')
-#if player > 21 = bust
-#else if player = 21
-#when player stands, do dealer stuff
-  #dealer hits until >=17
-    #if dealer >21, you win!
-    #else, compare player to dealer score
-      #if player>, alert you win!
-      #if player<, alert you lose
-      #if tie, alert push
+
+#compare cards you start with
+#button to split
+#make a new hand by popping from the original
+#new hits only go to first hand until they lose or stand
+  #repeat with 2nd hand
